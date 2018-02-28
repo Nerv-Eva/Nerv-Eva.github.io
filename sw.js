@@ -11,6 +11,10 @@ self.addEventListener('fetch', event => {
 });
 
 function content (req) {
+    fetch(req).catch((e)=>{
+      console.log(e)
+    })
+
   return fetch(req);
 }
 
