@@ -11,7 +11,7 @@ self.addEventListener('fetch', event => {
 });
 
 function content (req) {
-    fetch(req).catch((e)=>{
+    fetch(req).then((res)=>console.log(res)).catch((e)=>{
       console.log(e)
     })
 
