@@ -7,7 +7,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
     console.log(event);
-    event.respondWith(content(event.request));
+    //event.respondWith(content(event.request));
 });
 
 function content (req) {
