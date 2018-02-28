@@ -7,9 +7,14 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
     console.log(event);
-    event.respondWith('aa');
+    event.respondWith(content(event.request));
 });
 
+function content (req) {
+  return fetch(req);
+}
+
+/*
 function streamContent() {
   try {
     new ReadableStream({});
@@ -49,7 +54,7 @@ function streamContent() {
     headers: {'Content-Type': 'text/html'}
   })
 }
-
+*/
 
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
 
